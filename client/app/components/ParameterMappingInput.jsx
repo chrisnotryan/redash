@@ -336,7 +336,10 @@ export class ParameterMappingListInput extends React.Component {
   }
 
   static getDefaultValue(mapping) {
-    const value = mapping.value || mapping.param.value;
+    const value = mapping.type === MappingType.StaticValue
+      ? mapping.value || mapping.param.value
+      : mapping.param.value;
+
     return this.getStringValue(value);
   }
 
