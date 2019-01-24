@@ -12,6 +12,7 @@ describe('Percy Page Screenshots', () => {
     it(`takes a screenshot of ${page}`, () => {
       cy.login();
       cy.visit(page);
+      cy.wait(1000);
       cy.percySnapshot(page);
     });
   });
